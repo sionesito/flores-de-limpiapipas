@@ -16,7 +16,7 @@ body {
 
 /* Encabezado hero */
 .hero {
-    background-image: url('imagenes/hero.jpg'); /* coloca una imagen representativa */
+    background-image: url('imagenes/p1-cover.jpg'); /* Portada o hero */
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -95,8 +95,7 @@ body {
     transition: background-color 0.3s ease;
 }
 .buy:hover {
-    /* utiliza un color ligeramente más oscuro para el estado hover */
-    background-color: #c88a64;
+    background-color: #c88a64; /* tono más oscuro */
 }
 
 /* Pie de página */
