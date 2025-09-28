@@ -1,46 +1,107 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores de Limpiapipas</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Flores de Limpiapipas</h1>
-            <p>Artesanías hechas a mano con cariño</p>
-        </div>
-    </header>
+/* Variables de colores */
+:root {
+    --crema: #FFF7E6;
+    --acento: #DFA67B;
+    --texto-oscuro: #333333;
+    --blanco: #FFFFFF;
+    --sombra: rgba(0, 0, 0, 0.1);
+}
 
-    <main class="products">
-        <!-- Ejemplos de productos, sustituye las imágenes y textos -->
-        <article class="product">
-            <img src="imagenes/ramo1.jpg" alt="Ramo de flores de limpiapipas">
-            <h2>Ramo de flores color pastel</h2>
-            <p class="price">$150 MXN</p>
-            <p class="desc">Ramo con varios colores y hojas de limpiapipas.</p>
-            <button class="buy">Comprar</button>
-        </article>
-        <article class="product">
-            <img src="imagenes/ramo2.jpg" alt="Arreglo floral">
-            <h2>Arreglo floral alegre</h2>
-            <p class="price">$180 MXN</p>
-            <p class="desc">Arreglo multicolor ideal para regalo.</p>
-            <button class="buy">Comprar</button>
-        </article>
-        <article class="product">
-            <img src="imagenes/ramo3.jpg" alt="Bouquet personalizado">
-            <h2>Bouquet personalizado</h2>
-            <p class="price">$200 MXN</p>
-            <p class="desc">Personaliza tu propio ramo de flores con colores a elegir.</p>
-            <button class="buy">Comprar</button>
-        </article>
-    </main>
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--crema);
+    color: var(--texto-oscuro);
+}
 
-    <footer>
-        <p>&copy; 2025 Flores de Limpiapipas. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
+/* Encabezado hero */
+.hero {
+    background-image: url('imagenes/p1-cover.jpg'); /* Portada o hero */
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--blanco);
+    position: relative;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+.hero p {
+    font-size: 1.25rem;
+}
+
+/* Grid de productos */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+.product {
+    background-color: var(--blanco);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--sombra);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.product img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+.product h2 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+.price {
+    font-weight: bold;
+    color: var(--acento);
+    margin-bottom: 0.5rem;
+}
+.desc {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+.buy {
+    background-color: var(--acento);
+    color: var(--blanco);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.buy:hover {
+    background-color: #c88a64; /* tono más oscuro */
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--crema);
+    font-size: 0.9rem;
+}
